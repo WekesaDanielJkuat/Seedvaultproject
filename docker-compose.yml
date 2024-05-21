@@ -2,20 +2,31 @@ version: '3.8'
 
 services:
   backend:
-    build: .
-    command: python3 manage.py runserver 0.0.0.0:8000
+    build:
+      context: ./backend
     volumes:
-      - .:/app
+      - ./backend:/app    # Mount the backend code
     ports:
       - "8000:8000"
-    # Commented out the depends_on section
-    # depends_on:
-    #   - db
-    environment:
-      # Commented out the environment variables related to MongoDB
-      # - DJANGO_DB_HOST=db
-      # - DJANGO_DB_PORT=27017
 
-# Removed the volumes section related to MongoDB
+  frontend:
+    build:
+      context: ./frontend
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+  # Uncomment the db service and the volumes section when you are ready to use MongoDB
+  # db:
+  #   image: mongo:4.4
+  #   ports:
+  #     - "27017:27017"
+  #   volumes:
+  #     - mongo_data:/data/db
+
+# Uncomment the volumes section when you are ready to use MongoDB
 # volumes:
 #   mongo_data:
