@@ -1,10 +1,10 @@
-from django.shortcuts import render
+'''from django.shortcuts import render
 
+
+#TODO: create react app - frontend
+#simple API Endpoint
 # Create your views here.
-#creating a simple API endpoint
-# api/views.py
-
 from django.http import JsonResponse
 
 def hello(request):
-    return JsonResponse({'message': 'Hello from Django API!'})
+    return JsonResponse({'message': 'Hello from Django API!'})'''

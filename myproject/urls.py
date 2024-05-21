@@ -15,16 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('myapp.urls')),
+
+    #path('api/hello/', hello),
 ]
 
-#creating a url route for the API endpoint
-# myproject/urls.py
-
-from api.views import hello
-
-urlpatterns = [
-    path('api/hello/', hello),
-]
+#TODO:create react app - frontend
+#url route for api
+#from api.views import hello

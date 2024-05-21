@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'myapp',
 ]
 
 MIDDLEWARE = [
@@ -73,6 +74,7 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+#TODO: This was default maybe change later
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -123,3 +125,72 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+#added ...:
+# settings.py
+
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'
+
+# Additional locations of static files
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
+# myproject/settings.py
+
+import os
+
+# TODO: Add React frontend build directory to STATICFILES_DIRS
+'''STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'frontend', 'build', 'static'),
+]'''
+
+
+# TODO: Add React frontend build directory to TEMPLATES 'DIRS' setting
+'''TEMPLATES = [
+    {
+        # Other configuration options...
+        'DIRS': [
+            os.path.join(BASE_DIR, 'frontend', 'build'),
+        ],
+        # Other configuration options...
+    },
+]
+'''
+
+
+# During production, use the following line to collect static files
+# STATIC_ROOT = BASE_DIR / "staticfiles"
+
+#TODO: configure mongodb - create database, add react app, api to apps
+#added ...
+# myproject/settings.py
+
+#TODO: Add the necessary settings when needed:
+
+import os
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'mydatabase',
+        'HOST': os.getenv('DJANGO_DB_HOST', 'localhost'),
+        'PORT': int(os.getenv('DJANGO_DB_PORT', 27017)),
+
+        'ENFORCE_SCHEMA': False,  # Optional: Set to True to enforce a schema
+        'CLIENT': {
+            'host': 'localhost',  # MongoDB host
+            'port': 27017,        # MongoDB port
+            'username': 'username',  # Optional: MongoDB username
+            'password': 'password',  # Optional: MongoDB password
+            'authSource': 'admin',   # Optional: MongoDB authentication database
+        }
+    }
+}
+'''
+
+ALLOWED_HOSTS = ['*']
+

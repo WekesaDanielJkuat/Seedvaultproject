@@ -1,0 +1,260 @@
+/* Colors */
+:root {
+    --primary-blue: #00a8e8; /* Bright Blue */
+    --secondary-green: #6ab344; /* Bright Green */
+    --text-black: #000000; /* Black */
+    --text-white: #FFFFFF; /* White */
+    --orange-hover: #ffa600; /*orange*/
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-black);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--primary-blue);
+    color: var(--text-white);
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav {
+    text-align: center;
+
+}
+
+nav ul {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display:inline-block;
+    position: relative;
+    margin-right: 70px;
+    padding: 12px;
+}
+
+nav ul li:hover{
+    color: var(--primary-blue)
+}
+
+
+#social-media {
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    left: 5px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 5;
+}
+
+#social-media a img {
+    width: 30px;
+    height: 30px;
+}
+
+#hero {
+    position: relative;
+    height: 60vh;
+    background-color: var(--secondary-green);
+}
+
+.slider {
+    display: flex;
+    height: 100%;
+}
+
+.slide {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-white);
+    text-align: center;
+}
+
+.cta {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.cta .btn {
+    background-color: var(--primary-blue);
+    color: var(--text-white);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+main {
+    padding: 20px;
+}
+
+#about-us .content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+#about-us .content img {
+    width: 50%;
+}
+
+#about-us .content .text {
+    flex: 1;
+}
+
+#about-us .btn {
+    background-color: var(--primary-blue);
+    color: var(--text-white);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#about-us .btn:hover {
+    background-color : var(--orange-hover)
+}
+
+#features {
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.feature {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.feature h3 {
+    margin-top: 0;
+}
+
+.feature p {
+    margin-bottom: 0;
+}
+
+#brands {
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.brands-grid img {
+    width: 100%;
+}
+
+#brands img {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+/*fixed image*/
+.fixed-image{
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+footer {
+    background-color: var(--primary-blue);
+    color: var(--text-white);
+    padding: 20px;
+    text-align: center;
+}
+
+footer .footer-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer .footer-content ul li a {
+    color: var(--text-white);
+    text-decoration: none;
+}
+
+footer .footer-content ul li a:hover {
+    color:var(--text-black);
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+
+footer p {
+    margin: 10px 0 0;
+}
+.signup-btn {
+    /* Additional styling for the Sign In button */
+    background-color:var(--primary-blue); /* Example color */
+    text-decoration: none; /* Ensure links don't have underlines */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.signup-btn:hover {
+    
+    color:var(--text-black); 
+}
+
+.signin-btn {
+    background-color: var(--text-white); 
+    color: var(--primary-blue); 
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none; /* Ensure links don't have underlines */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for .btn */
+.signin-btn:hover {
+    background-color:var(--orange-hover); /* Example color */
+}
+
+
+.btn:hover{
+    background-color: var(--orange-hover);
+    text-decoration: none; /* Ensure links don't have underlines */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
